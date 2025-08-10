@@ -722,8 +722,64 @@
             opacity: 0;
             pointer-events: none;
         }
+
+        /* Page visibility */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Ripple effect CSS */
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
         
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
         
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Section reveal animations */
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .animate-in {
+            animation: slideInUp 0.8s ease forwards;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -754,14 +810,8 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-               <div id="homePage" class="page active">
-                
-                <div class="content">
-                    <h1>Welcome to JRC PG</h1>
-                    <p>Your home away from home in Jaipur</p>
-                </div>
-                </div>
-
+                <h1>Welcome to JRC PG</h1>
+                <p>Your home away from home in Jaipur</p>
                 <div class="hero-buttons">
                     <a href="tel:+919015011123" class="btn btn-primary">
                         <i class="fas fa-phone"></i> Call Now
@@ -878,27 +928,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Testimonials -->
-        <!-- <section class="section active">
-            <div class="container">
-                <h2 class="section-title">What Our Residents Say</h2>
-                <div class="grid grid-3">
-                    <div class="testimonial">
-                        <p class="testimonial-text">JRC PG feels like home! The facilities are excellent and the staff is very caring. Highly recommended for students.</p>
-                        <p class="testimonial-author">- Priya Sharma, Student</p>
-                    </div>
-                    <div class="testimonial">
-                        <p class="testimonial-text">Clean rooms, good food, and great security. Perfect place for working professionals. The location is also very convenient.</p>
-                        <p class="testimonial-author">- Rahul Kumar, Software Engineer</p>
-                    </div>
-                    <div class="testimonial">
-                        <p class="testimonial-text">I've been staying here for 2 years. The management is very responsive and maintains high standards of hygiene.</p>
-                        <p class="testimonial-author">- Anjali Singh, CA Student</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
     </div>
 
     <!-- About Page -->
@@ -1016,7 +1045,7 @@
                             <li><i class="fas fa-check"></i> Free WiFi</li>
                             <li><i class="fas fa-check"></i> 4 Times Meals</li>
                         </ul>
-                        <a href="https://wa.me/919015011123?text=Hi, I'm interested in Triple Sharing room for Girls PG" target="_blank" class="btn btn-primary">Book Now</a>
+                        <a href="https://wa.me/919015011123?text=Hi JRC PG Team! 👋%0A%0AI'm interested in your accommodation. Here are my details:%0A%0A📝 Name: [Your Name]%0A📞 Phone: [Your Phone]%0A📧 Email: [Your Email]%0A🏠 Interested in: Girls PG - Triple Sharing (₹11,000/month)%0A💬 Message: [Your Message]%0A%0APlease get back to me with availability and other details.%0A%0AThank you! 🙏" target="_blank" class="btn btn-primary">Book Now</a>
                     </div>
                     <div class="pricing-card popular">
                         <h3>Double Sharing</h3>
@@ -1030,7 +1059,7 @@
                             <li><i class="fas fa-check"></i> Free WiFi</li>
                             <li><i class="fas fa-check"></i> 4 Times Meals</li>
                         </ul>
-                        <a href="https://wa.me/919015011123?text=Hi, I'm interested in Double Sharing room for Girls PG" target="_blank" class="btn btn-primary">Book Now</a>
+                        <a href="https://wa.me/919015011123?text=Hi JRC PG Team! 👋%0A%0AI'm interested in your accommodation. Here are my details:%0A%0A📝 Name: [Your Name]%0A📞 Phone: [Your Phone]%0A📧 Email: [Your Email]%0A🏠 Interested in: Girls PG - Double Sharing (₹12,000/month)%0A💬 Message: [Your Message]%0A%0APlease get back to me with availability and other details.%0A%0AThank you! 🙏" target="_blank" class="btn btn-primary">Book Now</a>
                     </div>
                     <div class="pricing-card">
                         <h3>Single Room</h3>
@@ -1044,7 +1073,7 @@
                             <li><i class="fas fa-check"></i> Free WiFi</li>
                             <li><i class="fas fa-check"></i> 4 Times Meals</li>
                         </ul>
-                        <a href="https://wa.me/919015011123?text=Hi, I'm interested in Single room for Girls PG" target="_blank" class="btn btn-primary">Book Now</a>
+                        <a href="https://wa.me/919015011123?text=Hi JRC PG Team! 👋%0A%0AI'm interested in your accommodation. Here are my details:%0A%0A📝 Name: [Your Name]%0A📞 Phone: [Your Phone]%0A📧 Email: [Your Email]%0A🏠 Interested in: Girls PG - Single Room (₹15,000/month)%0A💬 Message: [Your Message]%0A%0APlease get back to me with availability and other details.%0A%0AThank you! 🙏" target="_blank" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
 
@@ -1124,7 +1153,7 @@
                             <li><i class="fas fa-check"></i> Free WiFi</li>
                             <li><i class="fas fa-check"></i> 3 Times Meals</li>
                         </ul>
-                        <a href="https://wa.me/919015011123?text=Hi, I'm interested in Double Sharing room for Boys PG" target="_blank" class="btn btn-primary">Book Now</a>
+                        <a href="https://wa.me/919015011123?text=Hi JRC PG Team! 👋%0A%0AI'm interested in your accommodation. Here are my details:%0A%0A📝 Name: [Your Name]%0A📞 Phone: [Your Phone]%0A📧 Email: [Your Email]%0A🏠 Interested in: Boys PG - Double Sharing (₹6,700/month)%0A💬 Message: [Your Message]%0A%0APlease get back to me with availability and other details.%0A%0AThank you! 🙏" target="_blank" class="btn btn-primary">Book Now</a>
                     </div>
                     <div class="pricing-card">
                         <h3>Triple Sharing</h3>
@@ -1137,7 +1166,7 @@
                             <li><i class="fas fa-check"></i> Free WiFi</li>
                             <li><i class="fas fa-check"></i> 3 Times Meals</li>
                         </ul>
-                        <a href="https://wa.me/919015011123?text=Hi, I'm interested in Triple Sharing room for Boys PG" target="_blank" class="btn btn-primary">Book Now</a>
+                        <a href="https://wa.me/919015011123?text=Hi JRC PG Team! 👋%0A%0AI'm interested in your accommodation. Here are my details:%0A%0A📝 Name: [Your Name]%0A📞 Phone: [Your Phone]%0A📧 Email: [Your Email]%0A🏠 Interested in: Boys PG - Triple Sharing (₹6,700/month)%0A💬 Message: [Your Message]%0A%0APlease get back to me with availability and other details.%0A%0AThank you! 🙏" target="_blank" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
 
@@ -1149,7 +1178,7 @@
                 </div>
 
                 <h3 style="text-align: center; margin: 3rem 0 2rem;">Features for Boys</h3>
-                <div class="grid grid-4">
+                <div class="grid grid-3">
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-camera"></i>
@@ -1164,13 +1193,6 @@
                         <h3>Vehicle Parking</h3>
                         <p>Secure parking space for bikes and cars with 24/7 security.</p>
                     </div>
-                    <!-- <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <h3>Fitness Area</h3>
-                        <p>Basic gym equipment and workout space for fitness enthusiasts.</p>
-                    </div> -->
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-coffee"></i>
@@ -1281,7 +1303,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes, all our packages include 3 times meals (breakfast, lunch, and dinner). We serve healthy, home-cooked vegetarian food. Special dietary requirements can be discussed.</p>
+                            <p>Yes, all our packages include meals. Girls PG includes 4 times meals (breakfast, lunch, evening snacks, and dinner) while Boys PG includes 3 times meals (breakfast, lunch, and dinner). We serve healthy, home-cooked vegetarian food.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -1315,8 +1337,6 @@
                     <h3>JRC PG</h3>
                     <p>Your trusted accommodation partner in Jaipur. We provide safe, comfortable, and affordable living spaces for students and working professionals.</p>
                     <div class="social-links">
-                        <!-- <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a> -->
                         <a href="https://wa.me/919015011123" class="social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -1333,7 +1353,6 @@
                     <p><i class="fas fa-phone"></i> +91 901-501-1123</p>
                     <p><i class="fas fa-phone"></i> +91 894-708-9892</p>
                     <p><i class="fas fa-map-marker-alt"></i> 147, Krishna Vihar, Gopalpura Bypass, Jaipur</p>
-                    <p><i class="fas fa-envelope"></i> info@jrcpg.com</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
@@ -1414,28 +1433,106 @@
             }
         }
 
-        // Contact form submission
+        // Contact form submission with improved WhatsApp message
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const phone = this.querySelector('input[type="tel"]').value;
-            const email = this.querySelector('input[type="email"]').value;
+            // Get form data with proper element selection
+            const name = this.querySelector('input[type="text"]').value.trim();
+            const phone = this.querySelector('input[type="tel"]').value.trim();
+            const email = this.querySelector('input[type="email"]').value.trim();
             const interest = this.querySelector('select').value;
-            const message = this.querySelector('textarea').value;
+            const message = this.querySelector('textarea').value.trim();
             
-            // Create WhatsApp message
-            const whatsappMessage = `Hi JRC PG,%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AInterested in: ${interest}%0AMessage: ${message}%0A%0AThanks!`;
+            // Validate required fields
+            if (!name || !phone || !email || !interest) {
+                alert('Please fill in all required fields.');
+                return;
+            }
             
-            // Open WhatsApp
-            window.open(`https://wa.me/919015011123?text=${whatsappMessage}`, '_blank');
+            // Format interest option with pricing information
+            const interestOptions = {
+                'girls-single': 'Girls PG - Single Room (₹15,000/month)',
+                'girls-double': 'Girls PG - Double Sharing (₹12,000/month)',
+                'girls-triple': 'Girls PG - Triple Sharing (₹11,000/month)',
+                'boys-double': 'Boys PG - Double Sharing (₹6,700/month)',
+                'boys-triple': 'Boys PG - Triple Sharing (₹6,700/month)'
+            };
             
-            // Show success message
-            alert('Thank you for your inquiry! We will contact you soon.');
-            this.reset();
+            const interestText = interestOptions[interest] || interest;
+            
+            // Create formatted WhatsApp message exactly as requested
+            let whatsappMessage = `Hi JRC PG Team! 👋%0A%0A`;
+            whatsappMessage += `I'm interested in your accommodation. Here are my details:%0A%0A`;
+            whatsappMessage += `📝 Name: ${encodeURIComponent(name)}%0A`;
+            whatsappMessage += `📞 Phone: ${encodeURIComponent(phone)}%0A`;
+            whatsappMessage += `📧 Email: ${encodeURIComponent(email)}%0A`;
+            whatsappMessage += `🏠 Interested in: ${encodeURIComponent(interestText)}%0A`;
+            
+            if (message) {
+                whatsappMessage += `💬 Message: ${encodeURIComponent(message)}%0A`;
+            }
+            
+            whatsappMessage += `%0APlease get back to me with availability and other details.%0A%0AThank you! 🙏`;
+            
+            // Open WhatsApp with the formatted message
+            const whatsappURL = `https://wa.me/919015011123?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Show success message with better styling
+            showSuccessMessage('Message sent successfully! We will contact you soon.');
+            
+            // Reset form after a delay to show success message
+            setTimeout(() => {
+                this.reset();
+            }, 1000);
         });
+
+        // Function to show styled success message
+        function showSuccessMessage(message) {
+            const successDiv = document.createElement('div');
+            successDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(45deg, var(--success), #2ecc71);
+                color: white;
+                padding: 2rem 3rem;
+                border-radius: 15px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+                z-index: 10001;
+                text-align: center;
+                font-size: 1.1rem;
+                font-weight: 600;
+                opacity: 0;
+                transition: all 0.3s ease;
+            `;
+            
+            successDiv.innerHTML = `
+                <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                ${message}
+            `;
+            
+            document.body.appendChild(successDiv);
+            
+            // Animate in
+            setTimeout(() => {
+                successDiv.style.opacity = '1';
+                successDiv.style.transform = 'translate(-50%, -50%) scale(1.05)';
+            }, 10);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                successDiv.style.opacity = '0';
+                successDiv.style.transform = 'translate(-50%, -50%) scale(0.95)';
+                setTimeout(() => {
+                    if (successDiv.parentNode) {
+                        document.body.removeChild(successDiv);
+                    }
+                }, 300);
+            }, 3000);
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1497,35 +1594,7 @@
             });
         });
 
-        // Add ripple effect CSS
-        const rippleCSS = `
-            .btn {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .ripple-effect {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.6);
-                transform: scale(0);
-                animation: ripple 0.6s linear;
-                pointer-events: none;
-            }
-            
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        
-        const style = document.createElement('style');
-        style.textContent = rippleCSS;
-        document.head.appendChild(style);
-
-        // Gallery lightbox effect (if needed)
+        // Gallery lightbox effect
         document.querySelectorAll('.gallery-item').forEach(item => {
             item.addEventListener('click', function() {
                 const img = this.querySelector('img');
@@ -1569,78 +1638,28 @@
             });
         });
 
-        // Initialize tooltips for pricing cards
-        function initTooltips() {
-            const tooltipElements = document.querySelectorAll('[data-tooltip]');
-            tooltipElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    const tooltip = document.createElement('div');
-                    tooltip.className = 'tooltip';
-                    tooltip.textContent = this.getAttribute('data-tooltip');
-                    tooltip.style.cssText = `
-                        position: absolute;
-                        background: #333;
-                        color: white;
-                        padding: 8px 12px;
-                        border-radius: 6px;
-                        font-size: 14px;
-                        z-index: 1000;
-                        white-space: nowrap;
-                        pointer-events: none;
-                        opacity: 0;
-                        transition: opacity 0.3s ease;
-                    `;
-                    
-                    document.body.appendChild(tooltip);
-                    
-                    const rect = this.getBoundingClientRect();
-                    tooltip.style.left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + 'px';
-                    tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
-                    
-                    setTimeout(() => {
-                        tooltip.style.opacity = '1';
-                    }, 10);
-                    
-                    this.addEventListener('mouseleave', function() {
-                        if (tooltip.parentNode) {
-                            document.body.removeChild(tooltip);
-                        }
-                    });
-                });
+        // Add smooth reveal animations for sections
+        const revealSections = function() {
+            const sections = document.querySelectorAll('.section');
+            const windowHeight = window.innerHeight;
+            const revealPoint = 150;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                
+                if (sectionTop < windowHeight - revealPoint) {
+                    section.classList.add('revealed');
+                }
             });
-        }
+        };
 
-        // Call initialization functions
-        initTooltips();
+        window.addEventListener('scroll', revealSections);
 
-        // Add some dynamic content updates
-        function updateContactInfo() {
-            // You can add dynamic updates here
-            console.log('JRC PG Website Loaded Successfully!');
-        }
-
-        // Performance optimization
-        function lazyLoadImages() {
-            const images = document.querySelectorAll('img[data-src]');
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            images.forEach(img => imageObserver.observe(img));
-        }
+        // Call reveal function on page load
+        setTimeout(revealSections, 100);
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            updateContactInfo();
-            lazyLoadImages();
-            
             // Add entrance animations
             setTimeout(() => {
                 document.querySelectorAll('.card, .pricing-card').forEach((element, index) => {
@@ -1692,47 +1711,29 @@
             }
         }
 
-        // Add smooth reveal animations for sections
-        const revealSections = function() {
-            const sections = document.querySelectorAll('.section');
-            const windowHeight = window.innerHeight;
-            const revealPoint = 150;
-
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                
-                if (sectionTop < windowHeight - revealPoint) {
-                    section.classList.add('revealed');
-                }
+        // Performance optimization for images
+        function lazyLoadImages() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
             });
-        };
 
-        window.addEventListener('scroll', revealSections);
+            images.forEach(img => imageObserver.observe(img));
+        }
 
-        // Add CSS for revealed sections
-        const revealCSS = `
-            .section {
-                opacity: 0;
-                transform: translateY(50px);
-                transition: all 0.8s ease;
-            }
-            
-            .section.revealed {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
-            .animate-in {
-                animation: slideInUp 0.8s ease forwards;
-            }
-        `;
-        
-        const revealStyle = document.createElement('style');
-        revealStyle.textContent = revealCSS;
-        document.head.appendChild(revealStyle);
+        // Initialize lazy loading
+        lazyLoadImages();
 
-        // Call reveal function on page load
-        setTimeout(revealSections, 100);
+        // Console log for successful loading
+        console.log('JRC PG Website Loaded Successfully!');
+        console.log('All features initialized: Form submission, Navigation, Animations, Mobile support');
     </script>
 </body>
 </html>
