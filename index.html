@@ -722,53 +722,7 @@
             opacity: 0;
             pointer-events: none;
         }
-        #homePage {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            }
-
-            .background-slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            }
-
-            .bg-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            animation: fade 10s infinite;
-            }
-
-            .bg-slide:nth-child(1) { animation-delay: 0s; }
-            .bg-slide:nth-child(2) { animation-delay: 2s; }
-            .bg-slide:nth-child(3) { animation-delay: 4s; }
-            .bg-slide:nth-child(4) { animation-delay: 6s; }
-            .bg-slide:nth-child(5) { animation-delay: 8s; }
-
-            @keyframes fade {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            20% { opacity: 1; }
-            30% { opacity: 0; }
-            100% { opacity: 0; }
-            }
-
-            .content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            text-align: center;
-            padding-top: 100px;
-            }
-
+        
         
     </style>
 </head>
@@ -799,16 +753,9 @@
     <div id="homePage" class="page active">
         <!-- Hero Section -->
         <section class="hero">
-            <div id="homePage" class="page active">
-                <div class="background-slideshow">
-                    <img src="images/img1.jpeg" class="bg-slide" />
-                    <img src="images/img2.jpeg" class="bg-slide" />
-                    <img src="images/img3.jpeg" class="bg-slide" />
-                    <img src="images/img4.jpeg" class="bg-slide" />
-                    <img src="images/img5.jpeg" class="bg-slide" />
-                </div>
             <div class="hero-content">
-               
+               <div id="homePage" class="page active">
+                
                 <div class="content">
                     <h1>Welcome to JRC PG</h1>
                     <p>Your home away from home in Jaipur</p>
@@ -822,7 +769,7 @@
                     <a href="https://wa.me/919015011123" target="_blank" class="btn btn-outline">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
-                    <a href="#" class="btn btn-outline" onclick="showPage('contact')">
+                    <a href="#contactPage" class="btn btn-outline" onclick="showPage('contact')">
                         <i class="fas fa-calendar"></i> Schedule Visit
                     </a>
                 </div>
@@ -933,7 +880,7 @@
         </section>
 
         <!-- Testimonials -->
-        <section class="section active">
+        <!-- <section class="section active">
             <div class="container">
                 <h2 class="section-title">What Our Residents Say</h2>
                 <div class="grid grid-3">
@@ -951,7 +898,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 
     <!-- About Page -->
@@ -1203,13 +1150,13 @@
 
                 <h3 style="text-align: center; margin: 3rem 0 2rem;">Features for Boys</h3>
                 <div class="grid grid-4">
-                    <!-- <div class="card">
+                    <div class="card">
                         <div class="card-icon">
-                            <i class="fas fa-gamepad"></i>
+                            <i class="fas fa-camera"></i>
                         </div>
-                        <h3>Recreation Room</h3>
-                        <p>Common area with indoor games, TV, and entertainment facilities.</p>
-                    </div> -->
+                        <h3>CCTV Monitoring</h3>
+                        <p>24/7 CCTV surveillance in common areas for enhanced security.</p>
+                    </div>
                     <div class="card">
                         <div class="card-icon">
                             <i class="fas fa-motorcycle"></i>
@@ -1310,7 +1257,7 @@
                     <h3 style="text-align: center; margin-bottom: 2rem;">Our Location</h3>
                     <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; text-align: center;">
                         <p style="margin-bottom: 1rem; color: #666;">147, Krishna Vihar, Gopalpura Bypass, Jaipur</p>
-                        <a href="https://maps.google.com/?q=147+Krishna+Vihar+Gopalpura+Bypass+Jaipur" target="_blank" class="btn btn-primary">
+                        <a href="https://www.google.com/maps/place/JRC+Girls+PG/@26.8707998,75.7798764,17z/data=!3m1!4b1!4m6!3m5!1s0x396db50040553b21:0x378c920c8e7db291!8m2!3d26.8707998!4d75.7824513!16s%2Fg%2F11lnpx12c4?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary">
                             <i class="fas fa-map"></i> Open in Google Maps
                         </a>
                     </div>
@@ -1368,10 +1315,9 @@
                     <h3>JRC PG</h3>
                     <p>Your trusted accommodation partner in Jaipur. We provide safe, comfortable, and affordable living spaces for students and working professionals.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a> -->
                         <a href="https://wa.me/919015011123" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
